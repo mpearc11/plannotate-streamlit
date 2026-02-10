@@ -33,7 +33,6 @@ def BLAST(seq, db):
         )
 
         _ = subprocess.run(
-            f"{sys.executable}",
             shlex.split(cmd),
             shell=False,
             capture_output=True,
@@ -47,7 +46,6 @@ def BLAST(seq, db):
             f"{parameters} --outfmt 6 {flags}"
         )
         _ = subprocess.run(
-            f"{sys.executable}",
             shlex.split(cmd),
             shell=False,
             capture_output=True,
@@ -58,7 +56,6 @@ def BLAST(seq, db):
         flags = "--cut_ga --rfam --noali --nohmmonly --fmt 2"
         cmd = f"cmscan {flags} {parameters} --tblout {tmp.name} --clanin {db_loc} {query.name}"
         _ = subprocess.run(
-            f"{sys.executable}",
             shlex.split(cmd),
             shell=False,
             capture_output=True,
@@ -241,7 +238,7 @@ def get_details(inDf, yaml_file_loc):
         # Could scrape first line to infer what is given that way
         hits = "|".join(sseqids)
         output = NamedTemporaryFile(suffix="csv")
-        subprocess.call(f"{sys.executable}",f'rg -z "{hits}" {gz_loc} > {output.name}', shell=True)
+        subprocess.call(f'rg -z "{hits}" {gz_loc} > {output.name}', shell=True)
         gz_details = pd.read_csv(
             output.name, header=None, names=["sseqid", "Feature", "Description"]
         )

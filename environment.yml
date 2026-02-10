@@ -1,7 +1,7 @@
 name: plannotate
 channels:
   #- conda-forge #trying w/o this channel bc apparently it can increase the memory too much
-  #- bioconda
+  - bioconda
   - defaults
 dependencies:
   #- plannotate

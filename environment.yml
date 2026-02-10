@@ -24,4 +24,5 @@ dependencies:
   - pip
   - pip:
     - streamlit-bokeh
+    - biopython
 prefix: /home/zippy/anaconda3/envs/plannotate

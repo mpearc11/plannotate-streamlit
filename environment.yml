@@ -1,6 +1,6 @@
 name: plannotate
 channels:
-  #- conda-forge #trying w/o this channel bc apparently it can increase the memory too much; helps w memory! getting the same bio module not found error
+  #- conda-forge #env solving gets stuck (or at least is very slow) w conda-forge
   - bioconda
   - defaults
 dependencies:

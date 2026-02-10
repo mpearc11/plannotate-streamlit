@@ -1,6 +1,6 @@
 name: plannotate
 channels:
-  #- conda-forge #trying w/o this channel bc apparently it can increase the memory too much
+  #- conda-forge #trying w/o this channel bc apparently it can increase the memory too much; helps w memory! getting the same bio module not found error
   - bioconda
   - defaults
 dependencies:
@@ -21,4 +21,7 @@ dependencies:
   - altair=4.2.*
   - bokeh=3.8.2 #streamlit wants this specific version
   - protobuf=3.20.*
+  - pip
+  - pip:
+    - streamlit-bokeh
 prefix: /home/zippy/anaconda3/envs/plannotate
